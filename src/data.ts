@@ -1,10 +1,16 @@
 export type Project = {
   number: string
+  id: string
   category: string
   title: string
+  tagline: string
   description: string
   chips: string[]
-  github: string
+  metrics?: string
+  github?: string
+  liveDemo?: string
+  featured: boolean
+  visualType: 'gauge' | 'heatmap' | 'nodes' | 'terminal' | 'image'
   visualMock: string
 }
 
@@ -35,30 +41,83 @@ export const portfolio = {
   projects: [
     {
       number: '01',
+      id: 'estimator',
       category: 'PYTHON & STREAMLIT',
-      title: 'REPAIR COST ESTIMATOR',
-      description: 'Historical closed-complaint part compatibility & standardized gas pricing estimator for field technicians.',
-      chips: ['Python', 'Streamlit', 'SQLite', 'Pandas'],
+      title: 'DWP FIELD ASSISTANT ENGINE',
+      tagline: 'Diagnostic & Field Operations Suite',
+      description:
+        'Streamlined diagnostic and field operations tool built for Service Center tracking, Customer Complaint History search, part compatibility checks, and Technician Performance KPI calculations.',
+      chips: ['Python', 'Streamlit', 'SQLite', 'Pandas', 'KPI Analytics'],
+      metrics: 'Standardized field pricing & 4x faster complaint lookup',
       github: 'https://github.com/theeabrarrr/estimator',
-      visualMock: 'Animated gauge & live cost breakdown meter.',
+      liveDemo: '',
+      featured: true,
+      visualType: 'gauge',
+      visualMock: 'Animated repair cost breakdown & diagnostic gauge meter.',
     },
     {
       number: '02',
-      category: 'DATA PIPELINE',
-      title: 'ERP COMPLAINTS CLEANER',
-      description: 'Automated extraction and cleaning pipeline converting multi-page PDF and legacy ERP exports into structured Excel workbooks.',
-      chips: ['Python', 'pdfplumber', 'openpyxl', 'Pandas'],
-      github: 'https://github.com/theeabrarrr/erp-complaints-cleaner',
-      visualMock: 'Animated data transformation heatmap grid.',
+      id: 'lpg-gasflow',
+      category: 'FULL STACK & ERP',
+      title: 'GASFLOW OPERATIONS PLATFORM',
+      tagline: 'B2B LPG Cylinder Distribution & Ledger ERP',
+      description:
+        'Specialized enterprise operations platform and dashboard designed for a single-godown B2B LPG Cylinder Distribution business in Pakistan. Combines a frosted glassmorphic React frontend with a high-performance FastAPI backend connected to Supabase Cloud PostgreSQL 17.',
+      chips: ['React', 'FastAPI', 'PostgreSQL 17', 'Supabase', 'Tailwind CSS'],
+      metrics: 'Real-time cylinder ledger reconciliation',
+      github: 'https://github.com/theeabrarrr/lpg-gasflow',
+      liveDemo: '',
+      featured: true,
+      visualType: 'nodes',
+      visualMock: 'Live inventory ledger sync & transaction nodes.',
     },
     {
       number: '03',
-      category: 'BI & WORKFLOW',
-      title: 'ERP DISPATCH & PCB SYNC',
-      description: 'Self-referencing Power Query M-code feedback loops and Google Apps Script web app for real-time dispatch & PCB tracking.',
-      chips: ['Power Query M', 'Apps Script', 'Oracle ERP', 'Excel'],
-      github: 'https://github.com/theeabrarrr',
-      visualMock: 'Live status sync nodes & chat/log bubbles.',
+      id: 'rejection-tracking',
+      category: 'DATA PIPELINE & ETL',
+      title: 'WARRANTY REJECTION & PARTS ETL',
+      tagline: 'Automated Hardware Rejection Reconciliation',
+      description:
+        'Automated ETL and reconciliation pipeline in Microsoft Excel Power Query (M-Code). Resolves hardware replacement disputes (PCBs and boards) between store in-charges and field technicians by dynamically consolidating monthly rejection dumps, filtering non-warranty transactions, and merging system complaints with manual return logs.',
+      chips: ['Power Query M', 'Excel ETL', 'Data Cleansing', 'Folder Automation'],
+      metrics: 'Zero inventory handover dispute rate',
+      github: 'https://github.com/theeabrarrr/rejection-tracking-etl-pipeline',
+      liveDemo: '',
+      featured: true,
+      visualType: 'heatmap',
+      visualMock: 'Automated multi-source M-code ETL reconciliation pipeline.',
+    },
+    {
+      number: '04',
+      id: 'erp-complaints-cleaner',
+      category: 'PYTHON & AUTOMATION',
+      title: 'ERP COMPLAINTS CLEANER',
+      tagline: 'Legacy ERP Print-Export Automated Parser',
+      description:
+        'Automated data extraction and cleansing pipeline converting multi-page raw ERP print-exports and messy PDF reports into structured, normalized, and formula-ready Excel workbooks.',
+      chips: ['Python', 'pdfplumber', 'openpyxl', 'Pandas', 'Regex'],
+      metrics: 'Eliminated manual report restructuring',
+      github: 'https://github.com/theeabrarrr/erp-complaints-cleaner',
+      liveDemo: '',
+      featured: true,
+      visualType: 'terminal',
+      visualMock: 'Regex text extractor & Excel workbook normalization.',
+    },
+    {
+      number: '05',
+      id: 'the-dev-portfolio',
+      category: 'CREATIVE TECH & 3D',
+      title: 'SCROLL-DRIVEN 3D PORTFOLIO',
+      tagline: 'Award-Level Creative Engineering Showcase',
+      description:
+        'High-performance scroll-driven personal engineering portfolio featuring pure CSS 3D, HTML5 Canvas transparent video frame streaming, Lenis smooth scrolling, mechanical odometer dials, and reactive cursor HUD.',
+      chips: ['React 19', 'TypeScript', 'GSAP', 'Lenis', 'HTML5 Canvas', 'CSS 3D'],
+      metrics: '60 FPS scroll frame-sync & zero Three.js bloat',
+      github: 'https://github.com/theeabrarrr/the-dev-portfolio',
+      liveDemo: '',
+      featured: true,
+      visualType: 'image',
+      visualMock: 'Canvas 2D frame streamer & 3D tilt interaction layer.',
     },
   ] satisfies Project[],
   journey: [
